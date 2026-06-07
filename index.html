@@ -392,7 +392,7 @@
 <nav>
   <div class="nav-logo">Eduxellence <span>Solutions</span></div>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+    <li><a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;" href="#services">Services</a></li>
     <li><a href="#payment">Payment</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -410,8 +410,8 @@
     <h1>Expert Services That <em>Elevate</em> Your Work</h1>
     <p>From research assistance and statistical analysis to digital marketing and high-ticket sales — professional support tailored to your needs and budget.</p>
     <div class="hero-actions">
-      <a href="#services" class="btn-primary">Explore Services ↓</a>
-      <a href="https://wa.me/2348135980311?text=Hello%2C%20I%20need%20help%20with%20a%20project" target="_blank" class="btn-outline">💬 WhatsApp Me</a>
+      <a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;" href="#services" class="btn-primary" style="cursor:pointer;">Explore Services ↓</a>
+      <a onclick="window.open('https://wa.me/2348135980311?text=Hello%2C%20I%20need%20help%20with%20a%20project','_blank'); return false;" href="#" class="btn-outline" style="cursor:pointer;">💬 WhatsApp Me</a>
     </div>
   </div>
 </section>
