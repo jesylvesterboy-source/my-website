@@ -20,8 +20,12 @@
     --border: rgba(200,150,12,0.2);
     --card-bg: rgba(255,255,255,0.95);
     --shadow: 0 4px 32px rgba(13,13,13,0.08);
+    --blue: #1a73e8;
+    --blue-dark: #1557b0;
+    --teal: #0FC9A0;
+    --teal-dark: #09A882;
   }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   body {
     font-family: 'DM Sans', sans-serif;
@@ -55,6 +59,44 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
+
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 220px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    z-index: 200;
+  }
+  .dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1.25rem;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .dropdown-content a:hover {
+    background: var(--gold-light);
+    color: var(--gold-dark);
+  }
+  .dropdown-content .drop-icon { font-size: 1.1rem; }
+  .dropdown:hover .dropdown-content { display: block; }
+  .dropdown:hover .drop-trigger { color: var(--gold); }
+
   .nav-cta {
     background: var(--gold); color: var(--white);
     padding: 0.5rem 1.25rem; border-radius: 4px;
@@ -63,14 +105,6 @@
     white-space: nowrap;
   }
   .nav-cta:hover { background: var(--gold-dark); }
-  .nav-cta-results {
-    background: var(--ink); color: var(--white);
-    padding: 0.5rem 1.25rem; border-radius: 4px;
-    font-size: 0.875rem; font-weight: 600;
-    text-decoration: none; transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .nav-cta-results:hover { background: #2A2A2A; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; }
 
@@ -189,6 +223,149 @@
   .center { text-align: center; }
   .center .section-sub { margin: 0 auto; }
 
+  /* SERVICE DOMAIN SECTIONS */
+  .domain-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: box-shadow 0.3s;
+  }
+  .domain-section:hover { box-shadow: var(--shadow); }
+  .domain-section:last-child { margin-bottom: 0; }
+  .domain-section .domain-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .domain-section .domain-icon {
+    width: 64px; height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .domain-icon.gold { background: var(--gold-light); }
+  .domain-icon.blue { background: #E8F0FE; }
+  .domain-icon.teal { background: rgba(15,201,160,0.15); }
+  .domain-section .domain-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .domain-section .domain-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .domain-section .domain-badge {
+    margin-left: auto;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .domain-section .domain-badge.blue-badge { background: var(--blue); color: var(--white); }
+  .domain-section .domain-badge.teal-badge { background: var(--teal); color: var(--ink); }
+  .domain-section .domain-badge.gold-badge { background: var(--gold); color: var(--ink); }
+
+  .domain-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .domain-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+  }
+  .domain-feature::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .domain-feature.blue-check::before { color: var(--blue); }
+  .domain-feature.teal-check::before { color: var(--teal); }
+
+  .domain-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--ink);
+    color: var(--white);
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+  .domain-cta:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .domain-cta.gold-cta { background: var(--gold); color: var(--ink); }
+  .domain-cta.gold-cta:hover { background: #E8A90E; }
+  .domain-cta.blue-cta { background: var(--blue); color: var(--white); }
+  .domain-cta.blue-cta:hover { background: var(--blue-dark); }
+  .domain-cta.teal-cta { background: var(--teal); color: var(--ink); }
+  .domain-cta.teal-cta:hover { background: var(--teal-dark); }
+
+  .domain-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 650px;
+    line-height: 1.7;
+  }
+
+  /* RESULTS SECTION (existing) */
+  .results-bg {
+    background: linear-gradient(135deg, #0D1B2A, #1B3A5C);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+  }
+  .results-bg .section-title { color: var(--white); }
+  .results-bg .section-sub { color: rgba(255,255,255,0.6); }
+  .results-features {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem; max-width: 800px; margin: 0 auto;
+  }
+  .results-feature {
+    text-align: center; padding: 1.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+  }
+  .results-feature .icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+  .results-feature h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .results-feature p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .results-cta { text-align: center; margin-top: 2rem; }
+  .btn-results-big {
+    background: var(--gold); color: var(--ink);
+    padding: 1rem 2.5rem; border-radius: 4px;
+    font-size: 1.1rem; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.75rem;
+  }
+  .btn-results-big:hover { background: #E8A90E; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,150,12,0.3); }
+
   /* HOW IT WORKS */
   .how-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -209,101 +386,6 @@
   }
   .how-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
   .how-card p { font-size: 0.875rem; color: var(--muted); }
-
-  /* SERVICES */
-  .services-bg { background: var(--white); }
-  .pillar { margin-bottom: 4rem; }
-  .pillar-header {
-    display: flex; align-items: center; gap: 1rem;
-    margin-bottom: 1.5rem; padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .pillar-icon {
-    width: 44px; height: 44px; border-radius: 6px;
-    background: var(--gold-light); display: flex;
-    align-items: center; justify-content: center;
-    font-size: 1.25rem;
-  }
-  .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
-  .pillar-sub { font-size: 0.875rem; color: var(--muted); }
-  .tier-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-  }
-  .tier-card {
-    border: 1px solid var(--border); border-radius: 8px;
-    overflow: hidden; transition: box-shadow 0.2s;
-    background: var(--card-bg);
-  }
-  .tier-card:hover { box-shadow: var(--shadow); }
-  .tier-card.featured {
-    border-color: var(--gold); border-width: 2px;
-  }
-  .tier-head {
-    padding: 1.25rem 1.5rem;
-    background: var(--cream-dark);
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
-  .tier-card.featured .tier-head { background: var(--gold-light); }
-  .tier-name { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-  .tier-label { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
-  .tier-price { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-dark); white-space: nowrap; }
-  .tier-price span { font-size: 0.8rem; font-weight: 400; font-family: 'DM Sans', sans-serif; color: var(--muted); }
-  .tier-body { padding: 1.25rem 1.5rem; }
-  .tier-body ul { list-style: none; margin-bottom: 1.25rem; }
-  .tier-body ul li {
-    font-size: 0.875rem; color: var(--ink-soft);
-    padding: 0.3rem 0;
-    display: flex; align-items: flex-start; gap: 0.6rem;
-  }
-  .tier-body ul li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
-  .tier-btn {
-    display: block; text-align: center;
-    background: var(--ink); color: var(--white);
-    padding: 0.65rem 1rem; border-radius: 4px;
-    font-size: 0.85rem; font-weight: 600;
-    text-decoration: none; transition: background 0.2s;
-  }
-  .tier-card.featured .tier-btn { background: var(--gold); color: var(--ink); }
-  .tier-btn:hover { background: var(--gold); color: var(--ink); }
-  .featured-badge {
-    background: var(--gold); color: var(--ink);
-    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 2px;
-    margin-bottom: 0.5rem; display: inline-block;
-  }
-
-  /* NEW: RESULTS PLATFORM SECTION */
-  .results-bg {
-    background: linear-gradient(135deg, #0D1B2A, #1B3A5C);
-    color: var(--white);
-  }
-  .results-bg .section-title { color: var(--white); }
-  .results-bg .section-sub { color: rgba(255,255,255,0.6); }
-  .results-features {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem; max-width: 800px; margin: 0 auto;
-  }
-  .results-feature {
-    text-align: center; padding: 1.5rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-  }
-  .results-feature .icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
-  .results-feature h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .results-feature p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-  .results-cta {
-    text-align: center; margin-top: 2rem;
-  }
-  .btn-results-big {
-    background: var(--gold); color: var(--ink);
-    padding: 1rem 2.5rem; border-radius: 4px;
-    font-size: 1.1rem; font-weight: 700;
-    text-decoration: none; transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 0.75rem;
-  }
-  .btn-results-big:hover { background: #E8A90E; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,150,12,0.3); }
 
   /* PAYMENT */
   .payment-bg { background: var(--ink); color: var(--white); }
@@ -442,15 +524,32 @@
     font-size: 0.8rem; border-top: 1px solid rgba(200,150,12,0.15);
   }
   footer strong { color: var(--gold); }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .tier-grid { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; align-items: center; }
     .platform-announce p { font-size: 0.875rem; }
+    .domain-section { padding: 1.5rem; }
+    .domain-section .domain-header { gap: 1rem; }
+    .domain-section .domain-badge { margin-left: 0; }
+    .results-bg { padding: 1.5rem; }
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      background: transparent;
+    }
+    .dropdown-content a { padding: 0.5rem 0; color: var(--muted); }
+    .dropdown-content a:hover { background: transparent; color: var(--gold); }
+    .dropdown:hover .dropdown-content { display: none; }
+    .dropdown.open .dropdown-content { display: block; }
+    .dropdown .drop-trigger { cursor: pointer; }
   }
 </style>
 </head>
@@ -460,19 +559,26 @@
 <nav>
   <div class="nav-logo">Eduxellence <span>Solutions</span></div>
   <ul class="nav-links">
-    <li><a onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;" href="#services">Services</a></li>
+    <li class="dropdown">
+      <a href="#" class="drop-trigger" onclick="toggleDropdown(event)">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="#stats"><span class="drop-icon">📊</span> Statistical Analysis</a>
+        <a href="#analytics"><span class="drop-icon">📈</span> Analytics Consulting</a>
+        <a href="#results"><span class="drop-icon">📊</span> School Management</a>
+        <a href="#clean"><span class="drop-icon">🧹</span> Data Cleaning</a>
+      </div>
+    </li>
     <li><a href="#payment">Payment</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://results.eduxellence.org" target="_blank" style="color:var(--gold); font-weight:600;">📊 Results Portal</a></li>
   </ul>
   <a href="https://wa.me/2348135980311?text=Hello%2C%20I%27d%20like%20to%20book%20a%20free%20consultation" target="_blank" class="nav-cta">Free Consultation</a>
-  <div class="hamburger" onclick="this.classList.toggle('open')">
+  <div class="hamburger" onclick="this.classList.toggle('open'); document.querySelector('.dropdown').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- PLATFORM ANNOUNCEMENT - NEW! -->
+<!-- PLATFORM ANNOUNCEMENT -->
 <div class="platform-announce">
   <p>
     🎉 <strong>NEW!</strong> Our School Management System is now LIVE! 
@@ -488,8 +594,8 @@
     <h1>Expert Services That <em>Elevate</em> Your Work</h1>
     <p>From research assistance and statistical analysis to digital marketing and high-ticket sales — professional support tailored to your needs and budget.</p>
     <div class="hero-actions">
-      <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="btn-primary" style="cursor:pointer;border:none;font-family:inherit;font-size:0.9rem;font-weight:600;">Explore Services ↓</button>
-      <button onclick="window.open('https://wa.me/2348135980311?text=Hello%2C%20I%20need%20help%20with%20a%20project','_blank')" class="btn-outline" style="cursor:pointer;border:1px solid rgba(255,255,255,0.3);background:transparent;font-family:inherit;font-size:0.9rem;font-weight:500;color:#fff;padding:0.875rem 2rem;border-radius:4px;">💬 WhatsApp Me</button>
+      <a href="#services" class="btn-primary">Explore Services ↓</a>
+      <a href="https://wa.me/2348135980311?text=Hello%2C%20I%20need%20help%20with%20a%20project" target="_blank" class="btn-outline">💬 WhatsApp Me</a>
       <a href="https://results.eduxellence.org" target="_blank" class="btn-results">📊 Try Results Portal →</a>
     </div>
   </div>
@@ -498,45 +604,132 @@
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item"><div class="trust-dot"></div><strong>6+ Years</strong>&nbsp;Teaching & Research Experience</div>
-  <div class="trust-item"><div class="trust-dot"></div><strong>7 Service Pillars</strong>&nbsp;Under One Roof</div>
+  <div class="trust-item"><div class="trust-dot"></div><strong>4 Service Platforms</strong>&nbsp;Under One Roof</div>
   <div class="trust-item"><div class="trust-dot"></div><strong>SPSS · EViews · Excel · Python · R</strong>&nbsp;Certified Tools</div>
   <div class="trust-item"><div class="trust-dot"></div>Services from&nbsp;<strong>$50</strong></div>
   <div class="trust-item"><div class="trust-dot"></div><strong>48-Hour</strong>&nbsp;Turnaround (Most Packages)</div>
 </div>
 
-<!-- NEW: RESULTS PLATFORM SECTION -->
-<section id="results" class="results-bg">
+<!-- SERVICES DOMAINS SECTION -->
+<section id="services">
   <div class="section-head center">
-    <span class="section-label" style="color:var(--gold);">New Platform</span>
-    <h2 class="section-title">School Management System</h2>
-    <p class="section-sub">A complete solution for schools, universities, and training centres to manage students, classes, scores, and reports.</p>
+    <span class="section-label">Our Platforms</span>
+    <h2 class="section-title">Service Domains</h2>
+    <p class="section-sub">Explore our suite of professional data and education platforms — from free tools to enterprise solutions.</p>
   </div>
-  <div class="results-features">
-    <div class="results-feature">
-      <span class="icon">👨‍🎓</span>
-      <h3>Student Management</h3>
-      <p>Add, import, and manage student profiles with ease.</p>
+
+  <!-- 1. STATS -->
+  <div id="stats" class="domain-section">
+    <div class="domain-header">
+      <div class="domain-icon gold">📊</div>
+      <div>
+        <div class="domain-title">Statistical Analysis</div>
+        <div class="domain-sub">Run 12 professional statistical tests directly in your browser</div>
+      </div>
+      <span class="domain-badge gold-badge">Free + Pay-per-use</span>
     </div>
-    <div class="results-feature">
-      <span class="icon">📚</span>
-      <h3>Class & Subject Setup</h3>
-      <p>Create classes, assign subjects, and set up grading templates.</p>
+    <p class="domain-desc">
+      Upload your dataset and run professional statistical tests — Chi-Square, T-Test, ANOVA, 
+      Correlation, Linear/Logistic Regression, PCA, Factor Analysis, ARIMA, and more. 
+      Get publication-ready charts, APA-formatted tables, assumption checks, and plain-English interpretation — instantly.
+    </p>
+    <div class="domain-features">
+      <div class="domain-feature">Chi-Square, T-Test, ANOVA</div>
+      <div class="domain-feature">Correlation &amp; Linear Regression</div>
+      <div class="domain-feature">Logistic Regression &amp; PCA</div>
+      <div class="domain-feature">Factor Analysis &amp; ARIMA</div>
+      <div class="domain-feature">Mann-Whitney &amp; Kruskal-Wallis</div>
+      <div class="domain-feature">APA citation + interpretation</div>
     </div>
-    <div class="results-feature">
-      <span class="icon">✏️</span>
-      <h3>Score Entry & Auto-Save</h3>
-      <p>Enter scores that auto-save as you type. No save button needed.</p>
+    <a href="https://stats.eduxellence.org" target="_blank" class="domain-cta gold-cta">📊 Open Statistical Analysis →</a>
+  </div>
+
+  <!-- 2. ANALYTICS -->
+  <div id="analytics" class="domain-section">
+    <div class="domain-header">
+      <div class="domain-icon blue">📈</div>
+      <div>
+        <div class="domain-title">Analytics Consulting</div>
+        <div class="domain-sub">Expert data analysis services for researchers, businesses, and organizations</div>
+      </div>
+      <span class="domain-badge blue-badge">Expert Services</span>
     </div>
-    <div class="results-feature">
-      <span class="icon">📊</span>
-      <h3>Report Generation</h3>
-      <p>Generate broadsheets, result cards, and class summaries instantly.</p>
+    <p class="domain-desc">
+      From descriptive analytics to predictive modeling — we help you transform raw data into 
+      actionable insights. Our team handles survey analysis, econometric modeling, time series 
+      forecasting, data visualization, and full research data analysis using SPSS, EViews, R, and Python.
+    </p>
+    <div class="domain-features">
+      <div class="domain-feature blue-check">Descriptive &amp; Statistical Analysis</div>
+      <div class="domain-feature blue-check">Time Series &amp; Forecasting</div>
+      <div class="domain-feature blue-check">Econometric Modeling</div>
+      <div class="domain-feature blue-check">Survey Data Analysis</div>
+      <div class="domain-feature blue-check">Data Visualization &amp; Dashboards</div>
+      <div class="domain-feature blue-check">Predictive Analytics</div>
+    </div>
+    <a href="https://analytics.eduxellence.org" target="_blank" class="domain-cta blue-cta">📈 Explore Analytics Services →</a>
+  </div>
+
+  <!-- 3. RESULTS (School Management) -->
+  <div id="results" class="results-bg">
+    <div class="section-head center" style="margin-bottom:2rem;">
+      <span class="section-label" style="color:var(--gold);">Live Platform</span>
+      <h2 class="section-title">School Management System</h2>
+      <p class="section-sub">A complete solution for schools, universities, and training centres to manage students, classes, scores, and reports.</p>
+    </div>
+    <div class="results-features">
+      <div class="results-feature">
+        <span class="icon">👨‍🎓</span>
+        <h3>Student Management</h3>
+        <p>Add, import, and manage student profiles with ease.</p>
+      </div>
+      <div class="results-feature">
+        <span class="icon">📚</span>
+        <h3>Class & Subject Setup</h3>
+        <p>Create classes, assign subjects, and set up grading templates.</p>
+      </div>
+      <div class="results-feature">
+        <span class="icon">✏️</span>
+        <h3>Score Entry & Auto-Save</h3>
+        <p>Enter scores that auto-save as you type. No save button needed.</p>
+      </div>
+      <div class="results-feature">
+        <span class="icon">📊</span>
+        <h3>Report Generation</h3>
+        <p>Generate broadsheets, result cards, and class summaries instantly.</p>
+      </div>
+    </div>
+    <div class="results-cta">
+      <a href="https://results.eduxellence.org" target="_blank" class="btn-results-big">
+        🚀 Launch Results Portal →
+      </a>
     </div>
   </div>
-  <div class="results-cta">
-    <a href="https://results.eduxellence.org" target="_blank" class="btn-results-big">
-      🚀 Launch Results Portal → 
-    </a>
+
+  <!-- 4. CLEAN -->
+  <div id="clean" class="domain-section" style="margin-top:3rem;">
+    <div class="domain-header">
+      <div class="domain-icon teal">🧹</div>
+      <div>
+        <div class="domain-title">Data Cleaning</div>
+        <div class="domain-sub">Clean messy CSV/Excel files automatically in seconds</div>
+      </div>
+      <span class="domain-badge teal-badge">Free Forever</span>
+    </div>
+    <p class="domain-desc">
+      Upload a messy CSV or Excel file and download a perfectly cleaned version instantly.
+      11 automated cleaning stages handle duplicates, missing values, mixed date formats,
+      currency symbols, inconsistent categories, and outliers — no installation or account required.
+    </p>
+    <div class="domain-features">
+      <div class="domain-feature teal-check">Whitespace stripping &amp; null standardisation</div>
+      <div class="domain-feature teal-check">Date &amp; currency parsing</div>
+      <div class="domain-feature teal-check">Duplicate removal &amp; outlier flagging</div>
+      <div class="domain-feature teal-check">Missing value imputation</div>
+      <div class="domain-feature teal-check">Category standardisation</div>
+      <div class="domain-feature teal-check">Column intelligence report</div>
+    </div>
+    <a href="https://clean.eduxellence.org" target="_blank" class="domain-cta teal-cta">🧹 Open Data Cleaner →</a>
   </div>
 </section>
 
@@ -551,7 +744,7 @@
     <div class="how-card">
       <div class="how-num">1</div>
       <h3>Choose Your Service</h3>
-      <p>Browse our 7 pillars and select the tier that matches your scope and budget.</p>
+      <p>Browse our 4 service platforms and select the one that matches your scope and budget.</p>
     </div>
     <div class="how-card">
       <div class="how-num">2</div>
@@ -567,507 +760,6 @@
       <div class="how-num">4</div>
       <h3>Receive Deliverable</h3>
       <p>Your completed work is delivered on time. Revisions included in most packages.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="services-bg">
-  <div class="section-head">
-    <span class="section-label">What We Offer</span>
-    <h2 class="section-title">Services & Pricing</h2>
-    <p class="section-sub">Tiered packages so every client — student, researcher, NGO, or business — finds the right fit.</p>
-  </div>
-
-  <!-- PILLAR 1 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">📚</div>
-      <div>
-        <div class="pillar-title">Research & Academic Services</div>
-        <div class="pillar-sub">From undergraduate support to full research consultation</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Starter</div>
-            <div class="tier-label">Proofreading & Formatting</div>
-          </div>
-          <div class="tier-price">$50</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Research proofreading (up to 5,000 words)</li>
-            <li>Academic formatting (APA, MLA, Harvard, Chicago)</li>
-            <li>Citation cleanup & reference verification</li>
-            <li>1 revision round</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20Research%20Starter%20package%20($50)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">Most Popular</div>
-            <div class="tier-name">Standard</div>
-            <div class="tier-label">Literature Review & Editing</div>
-          </div>
-          <div class="tier-price">$150</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Literature review (up to 30 sources)</li>
-            <li>Research editing & proofreading</li>
-            <li>Questionnaire / survey design</li>
-            <li>Academic formatting + citation management</li>
-            <li>2 revision rounds</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20Research%20Standard%20package%20($150)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Premium</div>
-            <div class="tier-label">Thesis & Dissertation Support</div>
-          </div>
-          <div class="tier-price">$300<span>/chapter</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Chapter-by-chapter thesis support</li>
-            <li>Research proposal writing</li>
-            <li>Methodology guidance & design</li>
-            <li>Data collection planning</li>
-            <li>Unlimited revisions</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20Thesis%20Support%20package%20($300)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Elite</div>
-            <div class="tier-label">Academic Research Consulting</div>
-          </div>
-          <div class="tier-price">$1,000<span>+</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Full proposal-to-defense support</li>
-            <li>Systematic review support</li>
-            <li>Research publication preparation</li>
-            <li>Grant research assistance</li>
-            <li>Dedicated weekly check-ins</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Academic%20Research%20Consulting%20($1000+)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 2 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">📊</div>
-      <div>
-        <div class="pillar-title">Data Analysis & Statistics</div>
-        <div class="pillar-sub">SPSS · EViews · Excel · R · Python</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Basic</div>
-            <div class="tier-label">Data Cleaning & Entry</div>
-          </div>
-          <div class="tier-price">$50</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Data entry & coding</li>
-            <li>Data cleaning & validation</li>
-            <li>Descriptive statistics</li>
-            <li>Excel / SPSS ready datasets</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Data%20Cleaning%20Basic%20($50)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">Best Value</div>
-            <div class="tier-name">Standard</div>
-            <div class="tier-label">Statistical Analysis</div>
-          </div>
-          <div class="tier-price">$150</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>T-tests, ANOVA, Correlation</li>
-            <li>Regression analysis</li>
-            <li>Survey data analysis</li>
-            <li>Results interpretation</li>
-            <li>Statistical report writing</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Statistical%20Analysis%20Standard%20($150)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Advanced</div>
-            <div class="tier-label">Econometric & Time Series</div>
-          </div>
-          <div class="tier-price">$300</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Econometric analysis (EViews)</li>
-            <li>Time series analysis</li>
-            <li>Agricultural data analysis</li>
-            <li>Data visualization & dashboards</li>
-            <li>PowerPoint data presentation</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Econometric%20Analysis%20($300)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Elite</div>
-            <div class="tier-label">Statistical Consulting</div>
-          </div>
-          <div class="tier-price">$500<span>+</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Full research data analysis</li>
-            <li>Monitoring & Evaluation support</li>
-            <li>Custom dashboard creation</li>
-            <li>NGO / business data reporting</li>
-            <li>Ongoing statistical consulting</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Statistical%20Consulting%20($500+)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 3 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">🎓</div>
-      <div>
-        <div class="pillar-title">Teaching & Tutoring</div>
-        <div class="pillar-sub">6+ years experience across English, Research, SPSS & more</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Single Session</div>
-            <div class="tier-label">1-Hour Tutoring</div>
-          </div>
-          <div class="tier-price">$20<span>/hr</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>English / TEFL tutoring</li>
-            <li>WAEC / NECO preparation</li>
-            <li>Statistics & SPSS basics</li>
-            <li>Academic writing coaching</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20a%20single%20tutoring%20session" target="_blank" class="tier-btn">Book Session →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">Most Popular</div>
-            <div class="tier-name">Package</div>
-            <div class="tier-label">5-Session Bundle</div>
-          </div>
-          <div class="tier-price">$100</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>5 one-hour sessions (save 20%)</li>
-            <li>Agric Economics / Research Methods</li>
-            <li>SPSS hands-on training</li>
-            <li>Session notes & study resources</li>
-            <li>Flexible scheduling</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%205-Session%20Tutoring%20Bundle%20($100)" target="_blank" class="tier-btn">Book Bundle →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Workshop</div>
-            <div class="tier-label">Research Training Workshop</div>
-          </div>
-          <div class="tier-price">$300</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Full-day or multi-session workshop</li>
-            <li>SPSS, Research Methodology or Academic Writing</li>
-            <li>Group or 1-on-1 format</li>
-            <li>Certificate of participation</li>
-            <li>Training materials included</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20a%20Research%20Training%20Workshop%20($300)" target="_blank" class="tier-btn">Book Workshop →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 4 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">✍️</div>
-      <div>
-        <div class="pillar-title">Content Writing & Creation</div>
-        <div class="pillar-sub">SEO articles, educational content, e-books & more</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Basic</div>
-            <div class="tier-label">Blog & Social Content</div>
-          </div>
-          <div class="tier-price">$50</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>2 blog posts (800–1,000 words each)</li>
-            <li>Social media content (1 week)</li>
-            <li>Newsletter writing</li>
-            <li>Basic SEO optimisation</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20Content%20Basic%20package%20($50)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">Best Value</div>
-            <div class="tier-name">Standard</div>
-            <div class="tier-label">SEO Articles & Web Copy</div>
-          </div>
-          <div class="tier-price">$150</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>4 SEO-optimised articles (1,200+ words)</li>
-            <li>Website content (up to 5 pages)</li>
-            <li>Research-based articles</li>
-            <li>Script writing for videos</li>
-            <li>Study guides or course notes</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20Content%20Standard%20package%20($150)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Premium</div>
-            <div class="tier-label">E-Book & Long-Form</div>
-          </div>
-          <div class="tier-price">$300</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>E-book writing (up to 10,000 words)</li>
-            <li>Educational content packages</li>
-            <li>Full content strategy</li>
-            <li>Formatted, publication-ready output</li>
-            <li>2 revision rounds</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20the%20E-Book%20Content%20package%20($300)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 5 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">📱</div>
-      <div>
-        <div class="pillar-title">Digital Marketing</div>
-        <div class="pillar-sub">Growth strategy, social media management & copywriting</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Starter</div>
-            <div class="tier-label">Social Media Setup</div>
-          </div>
-          <div class="tier-price">$100</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Facebook / WhatsApp marketing setup</li>
-            <li>Content calendar (1 month)</li>
-            <li>Basic Canva graphic designs (10)</li>
-            <li>Marketing copywriting</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Digital%20Marketing%20Starter%20($100)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">Most Popular</div>
-            <div class="tier-name">Growth</div>
-            <div class="tier-label">Monthly Management</div>
-          </div>
-          <div class="tier-price">$300<span>/mo</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Full social media management</li>
-            <li>Community management</li>
-            <li>Email marketing campaigns</li>
-            <li>Lead generation strategy</li>
-            <li>Monthly performance report</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Digital%20Marketing%20Growth%20($300/mo)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Premium</div>
-            <div class="tier-label">Full Growth Strategy</div>
-          </div>
-          <div class="tier-price">$500<span>/mo</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>All Growth package features</li>
-            <li>Paid ads strategy & support</li>
-            <li>Brand content production</li>
-            <li>Funnel copywriting</li>
-            <li>Weekly strategy calls</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Digital%20Marketing%20Premium%20($500/mo)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 6 -->
-  <div class="pillar">
-    <div class="pillar-header">
-      <div class="pillar-icon">💼</div>
-      <div>
-        <div class="pillar-title">High-Ticket Sales & Lead Generation</div>
-        <div class="pillar-sub">Appointment setting, lead qualification & sales support</div>
-      </div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Starter</div>
-            <div class="tier-label">Lead Qualification</div>
-          </div>
-          <div class="tier-price">$300</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Lead research & list building</li>
-            <li>Lead qualification calls</li>
-            <li>CRM data entry & management</li>
-            <li>Weekly leads report</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Lead%20Generation%20Starter%20($300)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card featured">
-        <div class="tier-head">
-          <div>
-            <div class="featured-badge">High Impact</div>
-            <div class="tier-name">Standard</div>
-            <div class="tier-label">Appointment Setting</div>
-          </div>
-          <div class="tier-price">$500</div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Appointment setting (monthly retainer)</li>
-            <li>Discovery call support</li>
-            <li>Sales funnel support</li>
-            <li>Customer relationship management</li>
-            <li>Performance tracking</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Appointment%20Setting%20Standard%20($500)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-      <div class="tier-card">
-        <div class="tier-head">
-          <div>
-            <div class="tier-name">Elite</div>
-            <div class="tier-label">Full Sales Support</div>
-          </div>
-          <div class="tier-price">$1,500<span>+</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>High-ticket closing support</li>
-            <li>Full sales pipeline management</li>
-            <li>Outreach copywriting & scripts</li>
-            <li>Dedicated sales strategy sessions</li>
-            <li>Coaches, Agencies & SaaS focus</li>
-          </ul>
-          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Full%20Sales%20Support%20Elite%20($1500+)" target="_blank" class="tier-btn">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PILLAR 7: NEW! Results Platform -->
-  <div class="pillar" style="border: 2px solid var(--gold); border-radius: 8px; padding: 1.5rem; background: var(--gold-light);">
-    <div class="pillar-header" style="border-bottom-color: var(--gold);">
-      <div class="pillar-icon" style="background: var(--gold); color: white;">📊</div>
-      <div>
-        <div class="pillar-title" style="color: var(--gold-dark);">School Management System</div>
-        <div class="pillar-sub">Our new digital platform for schools and training centres</div>
-      </div>
-      <div style="margin-left: auto; background: var(--gold); color: var(--ink); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">Live Now</div>
-    </div>
-    <div class="tier-grid">
-      <div class="tier-card featured">
-        <div class="tier-head" style="background: var(--gold);">
-          <div>
-            <div class="featured-badge" style="background: var(--white); color: var(--ink);">New</div>
-            <div class="tier-label" style="color: var(--white);">Results Management Platform</div>
-          </div>
-          <div class="tier-price" style="color: var(--white);">Free<span style="color: rgba(255,255,255,0.7);"> / start</span></div>
-        </div>
-        <div class="tier-body">
-          <ul>
-            <li>Student registration & management</li>
-            <li>Class & subject configuration</li>
-            <li>Score entry with auto-save</li>
-            <li>Report generation (Excel)</li>
-            <li>AI-powered student remarks</li>
-            <li>Real-time analytics dashboard</li>
-          </ul>
-          <a href="https://results.eduxellence.org" target="_blank" class="tier-btn" style="background: var(--gold); color: var(--ink);">Launch Platform →</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1118,7 +810,6 @@
     <p class="section-sub">Real results for real people — students, researchers, and businesses.</p>
   </div>
   <div class="test-grid">
-    <!-- Testimonial 1: Tyler A -->
     <div class="test-card">
       <div class="test-stars">★★★★★</div>
       <p class="test-quote">"Thank you Eduxellence for your quick work. I really appreciate your professionalism, speed, and attention to detail."</p>
@@ -1130,11 +821,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Testimonial 2: Alex Trufia -->
     <div class="test-card">
       <div class="test-stars">★★★★★</div>
-      <p class="test-quote">"Eduxellence delivered exceptional work — rigorous, well-structured, and thoroughly researched. Communication was excellent throughout, and the final manuscript exceeded my expectations in clarity, depth, and originality. I'm very satisfied with the collaboration and would gladly work with Eduxellence again in the future."</p>
+      <p class="test-quote">"Eduxellence delivered exceptional work — rigorous, well-structured, and thoroughly researched. Communication was excellent throughout, and the final manuscript exceeded my expectations."</p>
       <div class="test-author">
         <div class="test-avatar">AT</div>
         <div>
@@ -1143,8 +832,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Testimonial 3: Jason Yao -->
     <div class="test-card">
       <div class="test-stars">★★★★★</div>
       <p class="test-quote">"Eduxellence delivered on what I asked for and was able to identify my need. I would recommend Eduxellence for your project needs."</p>
@@ -1192,7 +879,11 @@
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Is the Results Portal free? <span>+</span></button>
-      <div class="faq-a">Yes! The Results Portal at <a href="https://results.eduxellence.org" target="_blank" style="color:var(--gold);">results.eduxellence.org</a> is completely free to use. Sign up and start managing your school today.</div>
+      <div class="faq-a">Yes! The Results Portal at <a href="https://results.eduxellence.org" target="_blank" style="color:var(--gold);">results.eduxellence.org</a> is completely free to start. Sign up and start managing your school today.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What are the free tools available? <span>+</span></button>
+      <div class="faq-a">Eduxellence offers two free tools: <a href="https://stats.eduxellence.org" target="_blank" style="color:var(--gold);">stats.eduxellence.org</a> for statistical analysis (descriptive statistics free, advanced tests use credits) and <a href="https://clean.eduxellence.org" target="_blank" style="color:var(--gold);">clean.eduxellence.org</a> for automated data cleaning (completely free forever).</div>
     </div>
   </div>
 </section>
@@ -1246,14 +937,11 @@
         <input type="text" placeholder="Your full name" id="cf-name">
         <input type="email" placeholder="Your email address" id="cf-email">
         <select id="cf-service">
-          <option value="" disabled selected>Select a service pillar</option>
-          <option>Research & Academic Services</option>
-          <option>Data Analysis & Statistics</option>
-          <option>Teaching & Tutoring</option>
-          <option>Content Writing & Creation</option>
-          <option>Digital Marketing</option>
-          <option>High-Ticket Sales & Lead Generation</option>
-          <option>School Management System (Results Portal)</option>
+          <option value="" disabled selected>Select a service</option>
+          <option>Statistical Analysis (stats.eduxellence.org)</option>
+          <option>Analytics Consulting (analytics.eduxellence.org)</option>
+          <option>School Management (results.eduxellence.org)</option>
+          <option>Data Cleaning (clean.eduxellence.org)</option>
         </select>
         <textarea placeholder="Briefly describe your project or what you need help with..." id="cf-msg"></textarea>
         <button class="consult-submit" onclick="submitConsult()">Send Enquiry via WhatsApp →</button>
@@ -1268,8 +956,14 @@
     Eduxellence <strong>Solutions</strong>
   </p>
   <p>© 2025 Eduxellence Solutions. All rights reserved. &nbsp;·&nbsp; Abuja, Nigeria &nbsp;·&nbsp;
-    <a href="mailto:eduxellencesolutions@gmail.com" style="color:var(--gold); text-decoration:none;">eduxellencesolutions@gmail.com</a> &nbsp;·&nbsp;
-    <a href="https://results.eduxellence.org" target="_blank" style="color:var(--gold); text-decoration:none;">📊 results.eduxellence.org</a>
+    <a href="mailto:eduxellencesolutions@gmail.com">eduxellencesolutions@gmail.com</a> &nbsp;·&nbsp;
+    <a href="https://results.eduxellence.org" target="_blank">📊 results.eduxellence.org</a>
+  </p>
+  <p style="margin-top:0.5rem; font-size:0.75rem; color:rgba(255,255,255,0.3);">
+    <a href="https://stats.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">stats</a> ·
+    <a href="https://analytics.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">analytics</a> ·
+    <a href="https://clean.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">clean</a> ·
+    <a href="https://results.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">results</a>
   </p>
 </footer>
 
@@ -1282,6 +976,14 @@ function toggleFaq(btn) {
   if (!isOpen) {
     answer.classList.add('open');
     btn.classList.add('active');
+  }
+}
+
+function toggleDropdown(e) {
+  e.preventDefault();
+  const dropdown = e.target.closest('.dropdown');
+  if (window.innerWidth <= 768) {
+    dropdown.classList.toggle('open');
   }
 }
 
@@ -1303,6 +1005,14 @@ Message: ${msg || 'No additional message.'}`;
   const encoded = encodeURIComponent(text);
   window.open(`https://wa.me/2348135980311?text=${encoded}`, '_blank');
 }
+
+// Close dropdown on click outside (for mobile)
+document.addEventListener('click', function(e) {
+  const dropdown = document.querySelector('.dropdown');
+  if (dropdown && !dropdown.contains(e.target) && window.innerWidth <= 768) {
+    dropdown.classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
