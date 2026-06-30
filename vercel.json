@@ -4,6 +4,9 @@
     { "src": "/", "dest": "/index.html" },
     { "src": "/services", "dest": "/services.html" },
     { "src": "/services.html", "dest": "/services.html" },
+    { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/privacy", "dest": "/privacy.html" },
+    { "src": "/refund", "dest": "/refund.html" },
     { "src": "/free-tools", "status": 301, "dest": "/" },
     { "src": "/free-tools.html", "status": 301, "dest": "/" },
     { "src": "/analytics", "dest": "https://analytics.eduxellence.org" },
@@ -56,6 +59,24 @@
         { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept" },
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/terms.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/privacy.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/refund.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     }
   ],
