@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Eduxellence Solutions Bright Horizon</title>
+  <link rel="icon" type="image/x-icon" href="/Eduxellence.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C8960C; --gold-light: #F5E6B8; --gold-dark: #8B6508;
+      --ink: #0D0D0D; --ink-soft: #2A2A2A; --cream: #FDFAF4;
+      --white: #FFFFFF; --muted: #6B6456;
+      --border: rgba(200,150,12,0.2); --shadow: 0 4px 32px rgba(13,13,13,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,250,244,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .legal-hero {
+      background: linear-gradient(160deg, #0D0D0D 0%, #1A1508 60%, #2A1F08 100%);
+      padding: 80px 5% 60px; text-align: center; position: relative; overflow: hidden;
+    }
+    .legal-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,150,12,0.10) 0%, transparent 70%);
+    }
+    .legal-hero-inner { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; border: 1px solid rgba(200,150,12,0.5);
+      color: var(--gold); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.25rem;
+    }
+    .legal-hero h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .legal-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+    .container { max-width: 780px; margin: 0 auto; padding: 60px 5% 80px; }
+    .section-block {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 2rem 2.25rem; margin-bottom: 1.5rem; transition: box-shadow 0.2s;
+    }
+    .section-block:hover { box-shadow: var(--shadow); }
+    .section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--gold); color: var(--ink);
+      font-size: 0.75rem; font-weight: 700; margin-right: 10px; flex-shrink: 0;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 1rem; display: flex; align-items: center;
+    }
+    p { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.75; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 0.75rem 1.25rem; }
+    ul li { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.7; }
+    a { color: var(--gold-dark); }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+    th { background: var(--gold-light); text-align: left; padding: 10px 12px; font-weight: 600; color: var(--ink); border: 1px solid var(--border); }
+    td { padding: 10px 12px; border: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+    tr:nth-child(even) td { background: #fdfaf4; }
+    .highlight {
+      background: var(--gold-light); border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0;
+      font-size: 0.875rem; color: var(--ink-soft); line-height: 1.7;
+    }
+    .highlight strong { color: var(--gold-dark); }
+    .contact-box {
+      background: linear-gradient(135deg, #0D0D0D, #1A1508);
+      border: 1px solid rgba(200,150,12,0.3); border-radius: 10px;
+      padding: 2rem 2.25rem; margin-top: 2rem;
+    }
+    .contact-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
+    .contact-box span { display: block; font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 0.25rem; }
+    .contact-box a { color: var(--gold); text-decoration: none; }
+    footer {
+      background: #080808; color: rgba(255,255,255,0.4);
+      padding: 2rem 5%; text-align: center; font-size: 0.8rem;
+      border-top: 1px solid rgba(200,150,12,0.15);
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 0.5rem; }
+    .footer-logo strong { color: var(--gold); }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 1rem; }
+    .footer-links a { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Eduxellence <span>Solutions</span></a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="hero-badge">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Effective 1 July 2025 &nbsp;·&nbsp; Eduxellence Solutions Bright Horizon, Abuja, Nigeria</p>
+  </div>
+</div>
+<div class="container">
+  <div class="section-block" style="background:var(--gold-light);border-color:var(--gold);">
+    <p style="color:var(--ink-soft);">Eduxellence Solutions Bright Horizon is committed to protecting your privacy. This policy explains how we collect, use, store, and protect information when you use our website, platforms, and services. By using our services, you consent to the practices described here.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">1</span>Who We Are</h2>
+    <p><strong>Eduxellence Solutions Bright Horizon</strong> is a professional services company registered in Nigeria, providing research assistance, data analysis, digital marketing, and education technology solutions including the School Results Portal at results.eduxellence.org.</p>
+    <p>For data protection purposes, we act as the <strong>data controller</strong> for information collected through our website and consulting engagements, and as a <strong>data processor</strong> for student data uploaded by schools to the Results Portal.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">2</span>Information We Collect</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Examples</th><th>How collected</th></tr></thead>
+      <tbody>
+        <tr><td>Contact information</td><td>Name, email, phone number</td><td>Consultation form, WhatsApp, email</td></tr>
+        <tr><td>Account information</td><td>Name, email, password (hashed), role</td><td>Results Portal registration</td></tr>
+        <tr><td>Project/service data</td><td>Datasets, research briefs, deliverables</td><td>Submitted by clients for consulting</td></tr>
+        <tr><td>Student/academic data</td><td>Student names, admission numbers, scores</td><td>Uploaded by schools to Results Portal</td></tr>
+        <tr><td>Payment information</td><td>Transaction reference, amount paid</td><td>Payment processors (Payoneer, Raenest, Paddle, Stripe)</td></tr>
+        <tr><td>Usage data</td><td>Pages visited, browser type, IP address</td><td>Automatically via cookies/server logs</td></tr>
+      </tbody>
+    </table>
+    <div class="highlight"><strong>Note:</strong> We do not store full card numbers or banking credentials. Payment processing is handled entirely by our third-party payment providers.</div>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">3</span>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Deliver and improve our consulting services and platforms.</li>
+      <li>Communicate with you about your project, account, or service package.</li>
+      <li>Process payments and maintain transaction records.</li>
+      <li>Provide customer support and respond to enquiries.</li>
+      <li>Send service-related notifications (delivery confirmations, platform updates).</li>
+      <li>Comply with legal obligations and detect/prevent fraud.</li>
+    </ul>
+    <p>We do <strong>not</strong> sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">4</span>Student Data (Results Portal)</h2>
+    <p>Schools using the Results Portal upload student data as part of their academic management. In this context:</p>
+    <ul>
+      <li>The school is the <strong>data controller</strong> — responsible for obtaining consent and ensuring lawful use of student data.</li>
+      <li>We are the <strong>data processor</strong> — we process student data only on the school's instructions.</li>
+      <li>Student data is stored securely via Supabase (PostgreSQL) with row-level security and encryption at rest.</li>
+      <li>We do not share student data with third parties except as required to operate the platform.</li>
+      <li>Schools may request deletion of their data at any time by contacting us.</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">5</span>Data Sharing &amp; Third Parties</h2>
+    <table>
+      <thead><tr><th>Third party</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Supabase</td><td>Database hosting and authentication (Results Portal)</td></tr>
+        <tr><td>Vercel / Netlify</td><td>Website and platform hosting</td></tr>
+        <tr><td>Payoneer</td><td>International payment processing</td></tr>
+        <tr><td>Raenest</td><td>Virtual account payment processing</td></tr>
+        <tr><td>Paddle / Stripe</td><td>Card payment processing</td></tr>
+        <tr><td>WhatsApp (Meta)</td><td>Client communication (where you initiate contact)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">6</span>Data Retention</h2>
+    <ul>
+      <li><strong>Consulting client data:</strong> 2 years after project completion, then securely deleted.</li>
+      <li><strong>Results Portal data:</strong> Duration of active subscription plus 6 months.</li>
+      <li><strong>Payment records:</strong> 7 years as required by Nigerian financial regulations.</li>
+      <li><strong>Enquiry/contact form data:</strong> 12 months.</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">7</span>Cookies &amp; Tracking</h2>
+    <p>Our website uses minimal cookies to maintain login sessions on the Results Portal, remember basic preferences, and collect anonymous usage statistics. We do not use advertising cookies or cross-site tracking.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">8</span>Your Rights</h2>
+    <p>Depending on your location, you may have the right to access, correct, delete, or restrict processing of your personal data, request data portability, or withdraw consent. To exercise any of these rights, email <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a>. We will respond within 30 days.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">9</span>Data Security</h2>
+    <p>Our security measures include HTTPS encryption on all web platforms, password hashing (bcrypt), row-level security on the Results Portal database, access controls limiting who can view client and student data, and regular security reviews. In the event of a data breach, we will notify affected users as required by applicable law.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">10</span>International Data Transfers</h2>
+    <p>Our services are hosted on infrastructure that may be located outside Nigeria (including the United States and European Union). By using our services, you consent to your data being transferred to and processed in these jurisdictions.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">11</span>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date above. For material changes, we will notify active platform users via email. Continued use of our services constitutes acceptance of the updated policy.</p>
+  </div>
+  <div class="contact-box">
+    <h3>Privacy Enquiries &amp; Data Requests</h3>
+    <span>Eduxellence Solutions Bright Horizon &nbsp;·&nbsp; Abuja, FCT, Nigeria</span>
+    <span>&#9993;&#65039; <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a></span>
+    <span>&#128172; <a href="https://wa.me/2348135980311" target="_blank">+234 813 598 0311</a></span>
+    <span>&#127758; <a href="https://eduxellence.org" target="_blank">eduxellence.org</a></span>
+  </div>
+</div>
+<footer>
+  <p class="footer-logo">Eduxellence <strong>Solutions</strong></p>
+  <p>&#169; 2025 Eduxellence Solutions Bright Horizon &nbsp;&#183;&nbsp; Abuja, Nigeria &nbsp;&#183;&nbsp; <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a></p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/refund">Refund Policy</a>
+    <a href="https://results.eduxellence.org" target="_blank">&#128202; Results Portal</a>
+  </div>
+</footer>
+</body>
+</html>

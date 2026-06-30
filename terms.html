@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Eduxellence Solutions Bright Horizon</title>
+  <link rel="icon" type="image/x-icon" href="/Eduxellence.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C8960C; --gold-light: #F5E6B8; --gold-dark: #8B6508;
+      --ink: #0D0D0D; --ink-soft: #2A2A2A; --cream: #FDFAF4;
+      --white: #FFFFFF; --muted: #6B6456;
+      --border: rgba(200,150,12,0.2); --shadow: 0 4px 32px rgba(13,13,13,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,250,244,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .legal-hero {
+      background: linear-gradient(160deg, #0D0D0D 0%, #1A1508 60%, #2A1F08 100%);
+      padding: 80px 5% 60px; text-align: center; position: relative; overflow: hidden;
+    }
+    .legal-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,150,12,0.10) 0%, transparent 70%);
+    }
+    .legal-hero-inner { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block; border: 1px solid rgba(200,150,12,0.5);
+      color: var(--gold); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 2px; margin-bottom: 1.25rem;
+    }
+    .legal-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .legal-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+    .container { max-width: 780px; margin: 0 auto; padding: 60px 5% 80px; }
+    .section-block {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 2rem 2.25rem; margin-bottom: 1.5rem; transition: box-shadow 0.2s;
+    }
+    .section-block:hover { box-shadow: var(--shadow); }
+    .section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--gold); color: var(--ink);
+      font-size: 0.75rem; font-weight: 700; margin-right: 10px; flex-shrink: 0;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 1rem; display: flex; align-items: center;
+    }
+    p { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.75; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 0.75rem 1.25rem; }
+    ul li { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.7; }
+    a { color: var(--gold-dark); }
+    .highlight {
+      background: var(--gold-light); border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0;
+      font-size: 0.875rem; color: var(--ink-soft); line-height: 1.7;
+    }
+    .highlight strong { color: var(--gold-dark); }
+    .alert-box {
+      background: linear-gradient(135deg, #0D0D0D, #1A1508);
+      border: 1px solid rgba(200,150,12,0.4); border-radius: 10px;
+      padding: 1.75rem 2.25rem; margin-bottom: 1.5rem;
+    }
+    .alert-box h2 { color: var(--white); font-size: 1.15rem; }
+    .alert-box p { color: rgba(255,255,255,0.6); }
+    .alert-box strong { color: var(--gold); }
+    .contact-box {
+      background: linear-gradient(135deg, #0D0D0D, #1A1508);
+      border: 1px solid rgba(200,150,12,0.3); border-radius: 10px;
+      padding: 2rem 2.25rem; margin-top: 2rem;
+    }
+    .contact-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
+    .contact-box span { display: block; font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 0.25rem; }
+    .contact-box a { color: var(--gold); text-decoration: none; }
+    footer {
+      background: #080808; color: rgba(255,255,255,0.4);
+      padding: 2rem 5%; text-align: center; font-size: 0.8rem;
+      border-top: 1px solid rgba(200,150,12,0.15);
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 0.5rem; }
+    .footer-logo strong { color: var(--gold); }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 1rem; }
+    .footer-links a { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Eduxellence <span>Solutions</span></a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="hero-badge">Legal</div>
+    <h1>Terms of Service</h1>
+    <p>Effective 1 July 2025 &nbsp;·&nbsp; Eduxellence Solutions Bright Horizon, Abuja, Nigeria</p>
+  </div>
+</div>
+<div class="container">
+  <div class="section-block" style="background:var(--gold-light);border-color:var(--gold);">
+    <p style="color:var(--ink-soft);">Please read these Terms carefully before using any service or platform operated by <strong>Eduxellence Solutions Bright Horizon</strong>. By accessing or using our services, you agree to be bound by these Terms.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">1</span>Services Covered</h2>
+    <p>These Terms apply to all services offered by Eduxellence Solutions Bright Horizon:</p>
+    <ul>
+      <li><strong>Research &amp; Data Analysis Consulting</strong> — statistical analysis, econometric modelling, survey analysis, and related expert services delivered remotely.</li>
+      <li><strong>Statistical Analysis Platform</strong> — browser-based tool at stats.eduxellence.org (free and pay-per-use tiers).</li>
+      <li><strong>School Results Portal</strong> — subscription platform at results.eduxellence.org for academic management.</li>
+      <li><strong>Digital Marketing &amp; Sales Services</strong> — content writing, digital marketing, and lead generation.</li>
+      <li><strong>Analytics Consulting</strong> — custom data analysis engagements at analytics.eduxellence.org.</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">2</span>Eligibility</h2>
+    <p>You must be at least 18 years old, or the legal age of majority in your jurisdiction, to use our paid services. Schools confirm that the administrator accepting these Terms is authorised to act on behalf of the organisation.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">3</span>User Accounts</h2>
+    <p>Where account registration is required, you agree to:</p>
+    <ul>
+      <li>Provide accurate, complete, and up-to-date information.</li>
+      <li>Keep your password secure and not share credentials with unauthorised parties.</li>
+      <li>Notify us immediately at <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a> if you suspect unauthorised access.</li>
+      <li>Take responsibility for all activity that occurs under your account.</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">4</span>Payments &amp; Fees</h2>
+    <p>We accept payment via Payoneer, Raenest, bank transfer (Naira and international wire), and card payments via Paddle or Stripe where available.</p>
+    <div class="highlight">
+      <strong>50% Deposit Rule:</strong> For consulting engagements above $200 USD, a non-refundable 50% deposit is required before work begins. The remaining balance is due upon delivery.
+    </div>
+    <p>All fees are quoted in USD unless otherwise stated. Nigerian clients may pay in Naira at the prevailing exchange rate confirmed at time of agreement.</p>
+  </div>
+  <div class="alert-box">
+    <h2>&#128274; No Refund Policy</h2>
+    <p style="margin-top:0.75rem;"><strong>All sales are final.</strong> Due to the digital and intellectual nature of our services, we do not offer refunds once work has commenced or a service has been delivered or accessed. If a deliverable materially fails to meet the agreed scope, we will offer a revision at no additional charge. See our full <a href="/refund" style="color:var(--gold);">Refund Policy</a>.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">5</span>Acceptable Use</h2>
+    <p>You agree not to use our services for any unlawful purpose, reverse engineer or resell our tools, upload harmful code to our platforms, or attempt unauthorised access to our infrastructure. Violation may result in immediate account termination.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">6</span>Intellectual Property</h2>
+    <p>All content, tools, software, and materials on our platforms are owned by or licensed to Eduxellence Solutions Bright Horizon. Upon full payment for consulting work, you receive a non-exclusive licence to use the deliverable for your stated purpose.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">7</span>Confidentiality</h2>
+    <p>We treat all client data, project briefs, datasets, and communications as strictly confidential. We will not disclose your information to third parties without your consent, except where required by law.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">8</span>Student Data (Results Portal)</h2>
+    <p>Schools uploading student data to the Results Portal are the data controller, responsible for obtaining appropriate consent. We act as data processor only. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">9</span>Disclaimer &amp; Limitation of Liability</h2>
+    <p>Our services are provided "as is" without warranties of any kind. Statistical outputs and consulting recommendations are professional opinions. Our total liability for any claim shall not exceed the amount paid by you for the specific service in the 30 days preceding the claim.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">10</span>Governing Law</h2>
+    <p>These Terms are governed by the laws of the Federal Republic of Nigeria. Disputes shall first be attempted to be resolved amicably, and if unresolved, are subject to the jurisdiction of the courts of Abuja, FCT, Nigeria.</p>
+  </div>
+  <div class="section-block">
+    <h2><span class="section-num">11</span>Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. We will notify active clients of material changes via email. Continued use of our services after changes are posted constitutes acceptance of the updated Terms.</p>
+  </div>
+  <div class="contact-box">
+    <h3>Legal Enquiries</h3>
+    <span>Eduxellence Solutions Bright Horizon &nbsp;·&nbsp; Abuja, FCT, Nigeria</span>
+    <span>&#9993;&#65039; <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a></span>
+    <span>&#128172; <a href="https://wa.me/2348135980311" target="_blank">+234 813 598 0311</a></span>
+    <span>&#127758; <a href="https://eduxellence.org" target="_blank">eduxellence.org</a></span>
+  </div>
+</div>
+<footer>
+  <p class="footer-logo">Eduxellence <strong>Solutions</strong></p>
+  <p>&#169; 2025 Eduxellence Solutions Bright Horizon &nbsp;&#183;&nbsp; Abuja, Nigeria &nbsp;&#183;&nbsp; <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a></p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/refund">Refund Policy</a>
+    <a href="https://results.eduxellence.org" target="_blank">&#128202; Results Portal</a>
+  </div>
+</footer>
+</body>
+</html>

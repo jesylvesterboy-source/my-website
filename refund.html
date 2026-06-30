@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy — Eduxellence Solutions Bright Horizon</title>
+  <link rel="icon" type="image/x-icon" href="/Eduxellence.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C8960C;
+      --gold-light: #F5E6B8;
+      --gold-dark: #8B6508;
+      --ink: #0D0D0D;
+      --ink-soft: #2A2A2A;
+      --cream: #FDFAF4;
+      --cream-dark: #F4EED8;
+      --white: #FFFFFF;
+      --muted: #6B6456;
+      --border: rgba(200,150,12,0.2);
+      --shadow: 0 4px 32px rgba(13,13,13,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,250,244,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    .legal-hero {
+      background: linear-gradient(160deg, #0D0D0D 0%, #1A1508 60%, #2A1F08 100%);
+      padding: 80px 5% 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,150,12,0.10) 0%, transparent 70%);
+    }
+    .legal-hero-inner { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(200,150,12,0.5);
+      color: var(--gold); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+    .legal-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.15; margin-bottom: 1rem;
+    }
+    .legal-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 60px 5% 80px; }
+
+    .section-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .section-block:hover { box-shadow: var(--shadow); }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 1rem;
+      display: flex; align-items: center;
+    }
+    p { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.75; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 0.75rem 1.25rem; }
+    ul li { font-size: 0.925rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.7; }
+
+    .no-refund-box {
+      background: linear-gradient(135deg, #0D0D0D, #1A1508);
+      border: 1px solid rgba(200,150,12,0.4);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .no-refund-box .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+    .no-refund-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--white);
+      justify-content: center; margin-bottom: 0.75rem;
+    }
+    .no-refund-box p { color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 0; }
+    .no-refund-box strong { color: var(--gold); }
+
+    .highlight {
+      background: var(--gold-light);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .highlight strong { color: var(--gold-dark); }
+
+    .contact-box {
+      background: linear-gradient(135deg, #0D0D0D, #1A1508);
+      border: 1px solid rgba(200,150,12,0.3);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .contact-box p { color: rgba(255,255,255,0.5); font-size: 0.875rem; margin: 0; }
+    .contact-box a {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--ink);
+      padding: 0.7rem 1.5rem; border-radius: 4px;
+      font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .contact-box a:hover { background: #E8A90E; }
+
+    footer {
+      background: #080808;
+      color: rgba(255,255,255,0.4);
+      padding: 2rem 5%;
+      text-align: center;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(200,150,12,0.15);
+    }
+    footer .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.5rem;
+    }
+    footer .footer-logo strong { color: var(--gold); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 1rem; }
+    .footer-links a { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Eduxellence <span>Solutions</span></a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="hero-badge">Legal · Payments</div>
+    <h1>Refund Policy</h1>
+    <p>Effective 1 July 2025 &nbsp;·&nbsp; Eduxellence Solutions Bright Horizon, Abuja, Nigeria</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- No Refund Statement -->
+  <div class="no-refund-box">
+    <span class="icon">🔒</span>
+    <h2>All Sales Are Final</h2>
+    <p>
+      Due to the <strong>digital and intellectual nature</strong> of our services, Eduxellence Solutions
+      Bright Horizon does not offer refunds once work has commenced, a service has been delivered,
+      or a platform subscription has been activated.
+    </p>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section-block">
+    <h2><span class="section-num">1</span>Why We Have a No-Refund Policy</h2>
+    <p>
+      Our services involve significant intellectual effort, time, and proprietary expertise invested
+      before, during, and at the point of delivery. Unlike physical products, digital deliverables
+      and consulting outputs cannot be "returned." Once a research report, statistical analysis,
+      or digital marketing strategy is delivered, that value has been transferred and cannot be undone.
+    </p>
+    <p>
+      This policy applies across all Eduxellence services including, but not limited to:
+    </p>
+    <ul>
+      <li>Research assistance and academic consulting deliverables</li>
+      <li>Statistical analysis reports (via stats.eduxellence.org)</li>
+      <li>School Results Portal subscriptions (results.eduxellence.org)</li>
+      <li>Digital marketing campaigns and content writing packages</li>
+      <li>Sales and lead generation services</li>
+      <li>Analytics consulting engagements</li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section-block">
+    <h2><span class="section-num">2</span>Before You Pay — How We Protect You</h2>
+    <p>
+      We take every step to ensure you are fully informed before making a payment. Our process is
+      designed to eliminate misunderstandings and set clear expectations:
+    </p>
+    <ul>
+      <li><strong>Scope confirmation first:</strong> We never begin work without your written confirmation of project scope, timeline, and deliverables via WhatsApp or email.</li>
+      <li><strong>Questions encouraged:</strong> We actively encourage you to ask all questions before confirming — our team responds within 24 hours.</li>
+      <li><strong>Deposit model:</strong> For projects above $200, only a 50% deposit is required upfront. The balance is paid upon delivery, giving you a checkpoint to confirm quality before full payment.</li>
+      <li><strong>Sample work:</strong> For new clients, we may provide sample outputs or outlines upon request before you commit.</li>
+    </ul>
+    <div class="highlight">
+      <strong>Our recommendation:</strong> Before paying, confirm your requirements in detail via
+      <a href="https://wa.me/2348135980311" target="_blank" style="color:var(--gold-dark); font-weight:600;">WhatsApp</a>
+      or <a href="mailto:j.sylvester@eduxellence.org" style="color:var(--gold-dark); font-weight:600;">email</a>.
+      We want you to be 100% confident before any payment is made.
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section-block">
+    <h2><span class="section-num">3</span>Revisions in Lieu of Refunds</h2>
+    <p>
+      While we do not offer refunds, we stand firmly behind the quality of our work. If a
+      deliverable <strong>materially fails to meet the agreed scope</strong>, we will provide
+      revision(s) at no additional charge:
+    </p>
+    <ul>
+      <li><strong>Standard packages:</strong> 1 revision round included.</li>
+      <li><strong>Premium packages:</strong> 2 revision rounds included.</li>
+      <li><strong>Elite/custom engagements:</strong> Revisions as agreed in writing at project start.</li>
+    </ul>
+    <p>
+      Revision requests must be submitted within <strong>7 days</strong> of delivery and must be based
+      on the originally agreed scope — not a change in requirements after delivery.
+    </p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section-block">
+    <h2><span class="section-num">4</span>Exceptional Circumstances</h2>
+    <p>
+      We understand that rare situations arise. At our sole discretion, we may consider a
+      <strong>partial credit</strong> (not a cash refund) in the following exceptional cases:
+    </p>
+    <ul>
+      <li>We are unable to complete the agreed work due to circumstances on our end (e.g. prolonged illness, technical failure).</li>
+      <li>Work has not yet commenced and you request cancellation within 24 hours of payment.</li>
+      <li>A demonstrable technical error caused a platform subscription to be charged twice.</li>
+    </ul>
+    <p>
+      Credits are applied to future Eduxellence services only and are valid for 12 months.
+      To raise an exceptional circumstances request, email
+      <a href="mailto:j.sylvester@eduxellence.org" style="color:var(--gold-dark); font-weight:600;">j.sylvester@eduxellence.org</a>
+      within 48 hours of the issue arising.
+    </p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section-block">
+    <h2><span class="section-num">5</span>Payment Processor Disputes</h2>
+    <p>
+      If you initiate a chargeback or payment dispute with Payoneer, Raenest, Paddle, Stripe,
+      or your bank without first contacting us to resolve the issue, we reserve the right to:
+    </p>
+    <ul>
+      <li>Provide full transaction evidence and service documentation to the payment processor.</li>
+      <li>Suspend your access to any Eduxellence platform pending resolution.</li>
+      <li>Decline future service requests from that account.</li>
+    </ul>
+    <p>
+      We strongly encourage you to contact us directly before raising any dispute — almost all
+      issues can be resolved quickly and amicably.
+    </p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section-block">
+    <h2><span class="section-num">6</span>School Results Portal — Subscriptions</h2>
+    <p>
+      Subscriptions to the School Results Portal (results.eduxellence.org) are non-refundable
+      once activated. However:
+    </p>
+    <ul>
+      <li>You may cancel your subscription at any time to prevent future renewals.</li>
+      <li>Cancellation takes effect at the end of the current billing period — you retain access until then.</li>
+      <li>Data export is available at any time before cancellation takes effect.</li>
+    </ul>
+    <div class="highlight">
+      <strong>Free plan available:</strong> The Results Portal offers a free tier so you can
+      evaluate the platform fully before committing to a paid subscription.
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section-block">
+    <h2><span class="section-num">7</span>Governing Policy</h2>
+    <p>
+      This Refund Policy is governed by the laws of the Federal Republic of Nigeria and forms
+      part of our <a href="/terms" style="color:var(--gold-dark); font-weight:600;">Terms of Service</a>.
+      By making a payment to Eduxellence Solutions Bright Horizon, you acknowledge that you have
+      read and agreed to this policy.
+    </p>
+    <p>
+      We reserve the right to update this policy at any time. Changes will be posted on this page
+      with an updated effective date. Continued use of our services constitutes acceptance of any
+      revised policy.
+    </p>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="contact-box">
+    <div>
+      <h3>Questions about a payment?</h3>
+      <p>We respond within 24 hours — reach out before raising any dispute.</p>
+    </div>
+    <a href="https://wa.me/2348135980311?text=Hello%2C%20I%20have%20a%20question%20about%20a%20payment" target="_blank">
+      💬 WhatsApp Us
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">Eduxellence <strong>Solutions</strong></p>
+  <p>© 2025 Eduxellence Solutions Bright Horizon &nbsp;·&nbsp; Abuja, Nigeria &nbsp;·&nbsp;
+    <a href="mailto:j.sylvester@eduxellence.org">j.sylvester@eduxellence.org</a>
+  </p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/refund">Refund Policy</a>
+    <a href="https://results.eduxellence.org" target="_blank">📊 Results Portal</a>
+  </div>
+</footer>
+
+</body>
+</html>
