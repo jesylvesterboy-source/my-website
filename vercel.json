@@ -12,13 +12,7 @@
     { "source": "/analytics", "destination": "https://analytics.eduxellence.org", "statusCode": 302 },
     { "source": "/stats", "destination": "https://stats.eduxellence.org", "statusCode": 302 },
     { "source": "/clean", "destination": "https://clean.eduxellence.org", "statusCode": 302 },
-    { "source": "/results", "destination": "https://results.eduxellence.org", "statusCode": 302 },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.eduxellence.org" }],
-      "destination": "https://eduxellence.org/$1",
-      "permanent": true
-    }
+    { "source": "/results", "destination": "https://results.eduxellence.org", "statusCode": 302 }
   ],
   "headers": [
     {
