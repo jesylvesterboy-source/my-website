@@ -703,3 +703,104 @@
         <div class="tier-body">
           <ul>
             <li>Lead research & list building</li>
+            <li>Cold outreach & appointment setting</li>
+            <li>CRM data management</li>
+            <li>Basic lead qualification</li>
+          </ul>
+          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Lead%20Qualification%20($300)" target="_blank" class="tier-btn">Get Started →</a>
+        </div>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-head">
+          <div>
+            <div class="featured-badge">Best Value</div>
+            <div class="tier-name">Growth</div>
+            <div class="tier-label">Sales Pipeline Management</div>
+          </div>
+          <div class="tier-price">$600<span>/mo</span></div>
+        </div>
+        <div class="tier-body">
+          <ul>
+            <li>Full lead generation campaign</li>
+            <li>Appointment setting & follow-up</li>
+            <li>Sales pipeline management</li>
+            <li>Weekly performance reporting</li>
+            <li>CRM setup & optimisation</li>
+          </ul>
+          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Sales%20Pipeline%20Management%20($600/mo)" target="_blank" class="tier-btn">Get Started →</a>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-head">
+          <div>
+            <div class="tier-name">Elite</div>
+            <div class="tier-label">Full Sales Team Support</div>
+          </div>
+          <div class="tier-price">$1,200<span>/mo</span></div>
+        </div>
+        <div class="tier-body">
+          <ul>
+            <li>Dedicated sales support team</li>
+            <li>Full outbound sales campaign</li>
+            <li>Sales scripts & training</li>
+            <li>Pipeline analytics & forecasting</li>
+            <li>Weekly strategy calls with leadership</li>
+          </ul>
+          <a href="https://wa.me/2348135980311?text=I'm%20interested%20in%20Full%20Sales%20Team%20Support%20($1200/mo)" target="_blank" class="tier-btn">Get Started →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <h2>Not Sure Which Package Fits?</h2>
+  <p>Reach out for a free consultation — we&apos;ll help you choose the right tier for your needs and budget.</p>
+  <a href="https://wa.me/2348135980311?text=Hello%2C%20I%20need%20help%20choosing%20a%20package" target="_blank" class="cta-btn">Book a Free Consultation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:0.5rem; font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.7);">
+    Eduxellence <strong>Tools</strong>
+  </p>
+  <p>© 2025 Eduxellence Solutions Bright Horizon. All rights reserved. &nbsp;·&nbsp; Abuja, Nigeria &nbsp;·&nbsp;
+    <a href="mailto:eduxellencesolutions@gmail.com">eduxellencesolutions@gmail.com</a>
+  </p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">
+    <a href="https://stats.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">stats</a> ·
+    <a href="https://experts.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">experts</a> ·
+    <a href="https://clean.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">clean</a> ·
+    <a href="https://results.eduxellence.org" target="_blank" style="color:rgba(255,255,255,0.4);">results</a>
+  </p>
+</footer>
+
+<script>
+  // Hamburger menu toggle
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+
+  // Close menu on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.hamburger')?.classList.remove('open');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
